@@ -1,18 +1,17 @@
-<header class="p-3 mb-3 border-bottom sticky-top bg-white bg-opacity-75 shadow-sm" style="backdrop-filter: blur(10px);">
+<header  class="p-3 mb-3 border-bottom sticky-top bg-white bg-opacity-75 shadow-sm" style="backdrop-filter: blur(10px);">
   <div class="container">
     <div class="d-flex flex-wrap align-items-center justify-content-between">
       
-      <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none fw-bold fs-4">
-        Mi <span class="text-primary"> Proyecto</span>
+      <a [routerLink]="['/home']" class="brand-logo d-flex align-items-center mb-2 mb-lg-0 text-decoration-none fw-bold fs-4">
+        Mi <span class="text-primary ms-1">Proyecto</span>
       </a>
 
       <ul class="nav col-12 col-lg-auto mb-2 justify-content-center mb-md-0 fw-medium">
-        <li><a class="nav-link px-3 link-primary active">Home</a></li>
-        <li><a  class="nav-link px-3 link-dark">Nuestros servicios</a></li>
-        <li><a class="nav-link px-3 link-dark text-primary fw-bold">Productos</a></li>
-        <li><a  class="nav-link px-3 link-dark">Contacto</a></li>
+        <li><a class="nav-link custom-link" [routerLink]="['/home']" routerLinkActive="active-link">Home</a></li>
+        <li><a class="nav-link custom-link" [routerLink]="['/nuestros-servicios']" routerLinkActive="active-link">Nuestros servicios</a></li>
+        <li><a class="nav-link custom-link" [routerLink]="['/productos']" routerLinkActive="active-link">Productos</a></li>
+        <li><a class="nav-link custom-link" [routerLink]="['/contacto']" routerLinkActive="active-link">Contacto</a></li>
       </ul>
 
     </div>
   </div>
-</header>
