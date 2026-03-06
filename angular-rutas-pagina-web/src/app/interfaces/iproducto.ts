@@ -1,2 +1,2 @@
-export interface Iproducto {
+export interface IProducto {
 }

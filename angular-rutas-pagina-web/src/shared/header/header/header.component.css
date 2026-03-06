@@ -1,0 +1,39 @@
+/* Estilo base para todos los enlaces */
+.custom-link {
+  color: #555 ; /* Gris oscuro elegante */
+  position: relative;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  padding-bottom: 5px;
+  margin: 0 5px;
+}
+
+/* ESTILO DEL ROUTERLINKACTIVE */
+.active-link {
+  color: #0d6efd ; /* Color azul de Bootstrap */
+  font-weight: 700; /* Un poco más de grosor */
+}
+
+/* La barrita inferior animada solo para el activo */
+.active-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 15%; /* Centrada un poco */
+  width: 70%;
+  height: 3px;
+  background-color: #0d6efd;
+  border-radius: 10px;
+  animation: slideIn 0.3s ease-out;
+}
+
+/* Animación de entrada de la barrita */
+@keyframes slideIn {
+  from { width: 0; left: 50%; }
+  to { width: 70%; left: 15%; }
+}
+
+/* Estilo para el logo */
+.brand-logo {
+  color: #212529;
+}
