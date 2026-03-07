@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { FormGroup, ReactiveFormsModule, FormControl, Validators } from '@angular/forms';
 import Swal from 'sweetalert2'; // Importación de la librería
+import { inject } from '@angular/core';
+import { IContacto } from '../../app/interfaces/icontacto';
+import { ContactoService } from '../../app/services/contacto.service';
 
 @Component({
   selector: 'app-contacto',
@@ -9,6 +12,10 @@ import Swal from 'sweetalert2'; // Importación de la librería
   styleUrl: './contacto.component.css',
 })
 export class ContactoComponent {
+
+  contactoService = inject(ContactoService); // Inyección del servicio
+
+
 
   contactForm: FormGroup; 
 
@@ -38,7 +45,8 @@ enviarMensaje() {
       }
     });
 
-    console.log(this.contactForm.value);
+    console.log('mensaje que llega:', this.contactForm.value);
+    this.contactoService.insertaContacto(this.contactForm.value);
     this.contactForm.reset(); 
   } else {
     // Opcional: Alerta de error si intentan forzar el envío
