@@ -1,1 +1,41 @@
-<p>product-card works!</p>
+<!-- Quita el 'container' y el 'max-width' de aquí -->
+<div class="card shadow-sm border-0 h-100 overflow-hidden" style="border-radius: 15px;">
+  
+  <div class="card-header bg-primary text-white p-4">
+    <div class="d-flex justify-content-between align-items-center">
+      <h2 class="h5 mb-0 fw-bold">{{ miProducto()?.title }}</h2>
+      <span class="badge bg-white text-primary fs-6">{{ miProducto()?.price }} €</span>
+    </div>
+  </div>
+
+  <div class="card-body p-4 d-flex flex-column">
+    <div class="mb-3">
+      <h6 class="text-uppercase text-muted fw-bold small mb-2">Descripción</h6>
+      <p class="text-dark small mb-1">{{ miProducto()?.description?.text }}</p>
+      <code class="text-primary small">#{{ miProducto()?.description?.slug }}</code>
+    </div>
+
+    <hr class="opacity-10 mt-auto">
+
+    <div class="row text-center bg-light rounded-3 p-2 g-0">
+      <div class="col-4">
+        <small class="text-muted d-block small">Stock</small>
+        <span class="fw-bold text-{{ miProducto()?.quantity! > 5 ? 'success' : 'danger' }}">
+          {{ miProducto()?.quantity }}
+        </span>
+      </div>
+      <div class="col-8 border-start">
+        <small class="text-muted d-block small">Procedencia</small>
+        <span class="small fw-semibold">
+          {{ miProducto()?.origen?.city }}
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-footer bg-white border-0 p-4 pt-0">
+    <button class="btn btn-primary w-100 fw-bold rounded-pill">
+      Añadir 🛒
+    </button>
+  </div>
+</div>

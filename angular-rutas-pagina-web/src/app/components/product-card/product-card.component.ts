@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { input } from '@angular/core';
 import { IProducto } from '../../interfaces/iproducto';
+import { computed } from '@angular/core';
 
 @Component({
   selector: 'app-product-card',
