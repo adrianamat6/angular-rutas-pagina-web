@@ -34,18 +34,7 @@ enviarMensaje() {
     // Extraemos los datos para personalizar el mensaje si quieres
     const nombreUsuario = this.contactForm.value.nombre;
 
-    Swal.fire({
-      title: '¡Enviado!',
-      text: `Gracias ${nombreUsuario}, hemos recibido tu mensaje correctamente.`,
-      icon: 'success',
-      confirmButtonText: 'Genial',
-      confirmButtonColor: '#0d6efd', // Color azul de tu proyecto
-      showClass: {
-        popup: 'animate__animated animate__fadeInUp' // Si usas Animate.css
-      }
-    });
-
-    console.log('mensaje que llega:', this.contactForm.value);
+    // Enviamos el mensaje usando el servicio
     this.contactoService.insertaContacto(this.contactForm.value);
     this.contactForm.reset(); 
   } else {
