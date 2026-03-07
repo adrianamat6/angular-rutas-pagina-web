@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { input } from '@angular/core';
 import { inject } from '@angular/core';
 import { TrabajosService } from '../../app/services/trabajos.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-work-view',
@@ -17,6 +18,11 @@ export class WorkViewComponent {
 
   arrayTrabajos = this.trabajosService.getTrabajos();
 
+  // Para hacer redirecciones en angular inyectamos el router
+  router = inject(Router);
+
+
+
   ngOnInit() {
     // Comprobar que this.seo existe
     let response = this.trabajosService.getTrabajoBySeo(this.seo());
@@ -24,7 +30,7 @@ export class WorkViewComponent {
     if (response) {
       console.log('Trabajo encontrado:', response);
     }else{
-      console.log('No se encontró ningún trabajo con el SEO:', this.seo());
+      this.router.navigate(['/error404']); // Redirige a la página de servicios si no se encuentra el trabajo
     }
   }
 
