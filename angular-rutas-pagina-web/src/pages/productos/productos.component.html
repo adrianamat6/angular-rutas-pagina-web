@@ -1,4 +1,13 @@
 <section class="container">
     <h1>Productos</h1>
     <hr>
+
+    @for (producto of arrayProductos;  track producto.id) {
+        <div>
+            <app-product-card [miProducto]="producto"></app-product-card>
+        </div>
+     }; 
+
+  
+
 </section>  
