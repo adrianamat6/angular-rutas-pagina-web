@@ -9,29 +9,9 @@
     </div>
   </div>
 
-  <div class="row g-4">
+  <div class="row g-4 d-flex">
     @for(trabajo of arrayTrabajos; track trabajo.id) {
-      <div class="col-md-6 col-lg-4">
-        <div class="card h-100 shadow-sm border-0 custom-card">
-          <div class="card-body p-4">
-            <div class="icon-box bg-primary bg-opacity-10 text-primary rounded-circle d-flex align-items-center justify-content-center mb-4">
-              <i class="bi bi-briefcase-fill fs-3"></i> 
-            </div>
-            
-            <h2 class="h5 fw-bold mb-3">{{trabajo.title}}</h2>
-            
-            <p class="card-text text-secondary mb-4">
-              {{trabajo.description}}
-            </p>
-          </div>
-          
-          <div class="card-footer bg-transparent border-0 pt-0 pb-4 px-4">
-            <a class="btn btn-link text-primary fw-semibold p-0 text-decoration-none">
-              Saber más <i class="bi bi-arrow-right ms-1"></i>
-            </a>
-          </div>
-        </div>
-      </div>
+        <app-work-card [miTrabajo]="trabajo"></app-work-card>
     }
   </div>
 </section>
