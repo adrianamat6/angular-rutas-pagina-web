@@ -5,6 +5,7 @@ import { ContactoComponent } from '../pages/contacto/contacto.component';
 import { ProductosComponent } from '../pages/productos/productos.component';
 import { NuestrosServiciosComponent } from '../pages/nuestros-servicios/nuestros-servicios.component';
 import { WorkViewComponent } from '../pages/work-view/work-view.component';
+import { InfoProductComponent } from './pages/info-product/info-product.component';
 
 
 export const routes: Routes = [
@@ -13,6 +14,7 @@ export const routes: Routes = [
     {path: 'nuestros-servicios', component: NuestrosServiciosComponent},
     {path: 'nuestros-servicios/:seo', component: WorkViewComponent}, //ruta dinámica para mostrar un servicio específico basado en un parámetro SEO
     {path: 'productos', component: ProductosComponent},
+    {path: 'productos/:id', component: InfoProductComponent}, //ruta dinámica para mostrar un producto específico basado en un parámetro SEO
     {path: 'contacto', component: ContactoComponent},
     {path: '**', component: Error404Component}
 
