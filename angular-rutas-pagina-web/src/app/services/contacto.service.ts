@@ -3,6 +3,7 @@ import { IContacto } from '../interfaces/icontacto';
 import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
 import { CONTACTOS } from '../db/contactos.db';
 import Swal from 'sweetalert2';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -12,9 +13,9 @@ export class ContactoService {
   private contactos: IContacto[] = CONTACTOS;
   
   // Configuración de EmailJS
-  private serviceID = 'service_ms7jdrl'; 
-  private templateID = 'template_6dh8oak'; 
-  private publicKey = 'QHJYroHv81suUDXsl';
+  private serviceID = environment.emailjs_service_id;
+  private templateID = environment.emailjs_template_id;
+  private publicKey = environment.emailjs_public_key;
 
   insertaContacto(contacto: IContacto): void {
     // 1. Guardar en el "array" local
