@@ -13,7 +13,7 @@ export class TrabajosService {
   }; 
 
   // Método para obtener un trabajo por su SEO o url amigable
-  getTrabajoBySeo(seo: string) {
+  getTrabajoBySeo(seo: string | undefined): IWork | undefined {
     return this.trabajos.find(trabajo => trabajo.seo === seo); 
   };
 
