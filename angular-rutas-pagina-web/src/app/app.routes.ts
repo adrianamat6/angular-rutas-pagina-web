@@ -11,7 +11,7 @@ export const routes: Routes = [
     {path: '', pathMatch: 'full', component: HomeComponent}, // para decir que es la ruta de entrada (el index.html)
     {path: 'home', component: HomeComponent},
     {path: 'nuestros-servicios', component: NuestrosServiciosComponent},
-    {path: 'nuestros-servicios/:seo', component: WorkViewComponent},
+    {path: 'nuestros-servicios/:seo', component: WorkViewComponent}, //ruta dinámica para mostrar un servicio específico basado en un parámetro SEO
     {path: 'productos', component: ProductosComponent},
     {path: 'contacto', component: ContactoComponent},
     {path: '**', component: Error404Component}

@@ -1,6 +1,6 @@
 import { IWork } from "../interfaces/iwork";
 
-export const servicios: IWork[] = [
+export const TRABAJOS: IWork[] = [
     {
         id: 1,
         title: "Desarrollo Web",
