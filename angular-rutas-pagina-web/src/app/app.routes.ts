@@ -5,7 +5,7 @@ import { ContactoComponent } from '../pages/contacto/contacto.component';
 import { ProductosComponent } from '../pages/productos/productos.component';
 import { NuestrosServiciosComponent } from '../pages/nuestros-servicios/nuestros-servicios.component';
 import { WorkViewComponent } from '../pages/work-view/work-view.component';
-import { InfoProductComponent } from './pages/info-product/info-product.component';
+import { InfoProductComponent } from '../pages/info-product/info-product.component';
 
 
 export const routes: Routes = [

@@ -18,7 +18,7 @@
     <hr class="opacity-10 mt-auto">
 
   <div class="card-footer bg-white border-0 p-4 pt-0">
-    <button class="btn btn-primary w-100 fw-bold rounded-pill">
+    <button class="btn btn-primary w-100 fw-bold rounded-pill" [routerLink]="['/productos', miProducto()?.id]"> <!-- Aquí es donde le dices a Angular que use el valor del ID del producto para construir la URL. Si miProducto()?.id es 5, entonces el enlace será /productos/5 -->
       Ver Más Detalles
     </button>
   </div>
